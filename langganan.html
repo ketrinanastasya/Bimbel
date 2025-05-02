@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form Langganan - HERO SECTION</title>
+  <style>
+    :root {
+      --primary: #fc89ac;
+      --dark: #333;
+      --light: #f8f9fb;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: var(--light);
+      margin: 0;
+      padding: 2rem;
+      color: var(--dark);
+    }
+
+    .container {
+      max-width: 600px;
+      background: #fff;
+      margin: auto;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    h1 {
+      text-align: center;
+      color: var(--primary);
+      margin-bottom: 2rem;
+    }
+
+    label {
+      display: block;
+      margin-top: 1rem;
+      font-weight: 500;
+    }
+
+    select {
+      width: 100%;
+      padding: 0.5rem;
+      margin-top: 0.5rem;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
+
+    .price-table {
+      margin-top: 2rem;
+      padding: 1rem;
+      background: var(--light);
+      border-radius: 6px;
+    }
+
+    .price-table ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .price-table li {
+      margin: 0.5rem 0;
+    }
+
+    button {
+      margin-top: 2rem;
+      width: 100%;
+      background-color: var(--primary);
+      color: white;
+      border: none;
+      padding: 0.75rem;
+      font-size: 1rem;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #e76d93;
+    }
+
+    .back {
+      text-align: center;
+      margin-top: 1rem;
+    }
+
+    .back a {
+      text-decoration: none;
+      color: var(--primary);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Form Langganan</h1>
+    <form>
+      <label for="jenjang">Jenjang</label>
+      <select id="jenjang" name="jenjang">
+        <option>SD</option>
+        <option>SMP</option>
+        <option>SMA</option>
+      </select>
+
+      <label for="kelas">Kelas</label>
+      <select id="kelas" name="kelas">
+        <option>1</option><option>2</option><option>3</option>
+        <option>4</option><option>5</option><option>6</option>
+        <option>7</option><option>8</option><option>9</option>
+        <option>10</option><option>11</option><option>12</option>
+      </select>
+
+      <label for="semester">Semester</label>
+      <select id="semester" name="semester">
+        <option>1</option>
+        <option>2</option>
+      </select>
+
+      <label for="kurikulum">Kurikulum</label>
+      <select id="kurikulum" name="kurikulum">
+        <option>K13</option>
+        <option>Merdeka</option>
+      </select>
+
+      <div class="price-table">
+        <h3>Harga Paket</h3>
+        <ul>
+          <li><strong>1 Bulan:</strong> Rp 150.000 (12 sesi)</li>
+          <li><strong>6 Bulan:</strong> Rp 810.000 (72 sesi)</li>
+          <li><strong>1 Tahun:</strong> Rp 1.530.000 (144 sesi)</li>
+        </ul>
+      </div>
+
+      <button type="submit">Daftar Sekarang</button>
+    </form>
+
+    <div class="back">
+      <a href="bimble.html">&larr; Kembali ke Beranda</a>
+    </div>
+  </div>
+</body>
+</html>
