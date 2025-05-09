@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Rincian Harga - HERO SECTION</title>
+  <style>
+    :root {
+      --primary: #fc89ac;
+      --dark: #333;
+      --light: #f8f9fb;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: var(--light);
+      color: var(--dark);
+      padding: 2rem;
+    }
+
+    .container {
+      background-color: #fff;
+      border-radius: 10px;
+      padding: 2rem;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .price-table {
+      margin-top: 2rem;
+      background: var(--light);
+      padding: 1rem;
+      border-radius: 6px;
+    }
+
+    .price-table h3 {
+      color: var(--primary);
+      text-align: center;
+    }
+
+    .price-table ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .price-table li {
+      margin: 0.5rem 0;
+    }
+
+    .cta-button {
+      display: block;
+      margin-top: 2rem;
+      background-color: var(--primary);
+      color: white;
+      padding: 0.75rem 1.5rem;
+      border-radius: 8px;
+      text-align: center;
+      font-weight: bold;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>Rincian Harga</h1>
+
+    <div class="price-table">
+      <h3>Harga Paket untuk <span id="selected-package"></span></h3>
+      <ul>
+        <li><strong>1 Bulan:</strong> Rp 150.000 (12 sesi)</li>
+        <li><strong>6 Bulan:</strong> Rp 810.000 (72 sesi)</li>
+        <li><strong>1 Tahun:</strong> Rp 1.530.000 (144 sesi)</li>
+      </ul>
+    </div>
+
+    <a href="checkout.html" class="cta-button">Check Out</a>
+  </div>
+
+  <script>
+    // Mendapatkan parameter URL (GET request)
+    const urlParams = new URLSearchParams(window.location.search);
+    const jenjang = urlParams.get('jenjang');
+    const kelas = urlParams.get('kelas');
+    const semester = urlParams.get('semester');
+    const kurikulum = urlParams.get('kurikulum');
+
+    // Menampilkan informasi pilihan
+    document.getElementById("selected-package").innerText = `${jenjang} - Kelas ${kelas} - Semester ${semester} - Kurikulum ${kurikulum}`;
+  </script>
+
+</body>
+</html>

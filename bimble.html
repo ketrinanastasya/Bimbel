@@ -59,13 +59,38 @@
       font-weight: 500;
     }
 
+    /* Hero Section */
     .hero-banner {
       position: relative;
-      background: url('bersama.jpg') center/cover no-repeat;
+      background: #000;
       height: 100vh;
       display: flex;
       align-items: center;
       justify-content: center;
+      overflow: hidden;
+    }
+
+    .hero-images {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+    }
+
+    .hero-image {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+    }
+
+    .hero-image.active {
+      opacity: 1;
+      z-index: 0;
     }
 
     .overlay {
@@ -75,22 +100,16 @@
       display: flex;
       align-items: center;
       justify-content: center;
+      z-index: 1;
+      position: relative;
     }
 
     .hero-content {
       color: white;
       text-align: center;
+      z-index: 2;
+      position: relative;
       padding: 2rem;
-    }
-
-    .hero-content h1 {
-      font-size: 3rem;
-      margin-bottom: 1rem;
-    }
-
-    .hero-content p {
-      font-size: 1.2rem;
-      margin-bottom: 2rem;
     }
 
     .cta-button {
@@ -100,6 +119,8 @@
       border-radius: 8px;
       text-decoration: none;
       font-weight: bold;
+      margin-top: 1rem;
+      display: inline-block;
     }
 
     .section {
@@ -171,44 +192,16 @@
       width: 32px;
       margin: 0 0.5rem;
     }
-
-    @media (max-width: 768px) {
-      .hero-banner {
-        height: 80vh;
-      }
-
-      .hero-content h1 {
-        font-size: 2rem;
-      }
-
-      .hero-content p {
-        font-size: 1rem;
-      }
-
-      .testimonial-container {
-        flex-direction: column;
-        align-items: center;
-      }
-
-      nav {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      .nav-links a {
-        margin: 0.5rem 0;
-      }
-    }
   </style>
 </head>
 <body>
 
   <!-- Header -->
-  <header>
+  <header id="home">
     <nav>
       <div class="logo">HERO SECTION</div>
       <div class="nav-links">
-        <a href="#" class="nav-links">Beranda</a>
+        <a href="#home">Beranda</a>
         <a href="langganan.html">Langganan</a>
         <a href="konten.html">Konten</a>
         <a href="#tentang">Tentang Kami</a>
@@ -218,6 +211,10 @@
 
   <!-- Hero Section -->
   <section class="hero-banner">
+    <div class="hero-images">
+      <img src="bersama.jpg" alt="Banner 1" class="hero-image">
+      <img src="interaktif.jpg" alt="Banner 2" class="hero-image">
+    </div>
     <div class="overlay">
       <div class="hero-content">
         <h1>Langkah Pasti Menuju Juara</h1>
@@ -250,12 +247,12 @@
   <section class="section" id="tentang">
     <h2>Tentang Kami</h2>
     <p>
-      <strong>HERO SECTION</strong> adalah platform bimbingan belajar online yang berdiri sejak <strong>tahun 2021</strong> dengan semangat untuk membimbing generasi muda menuju kesuksesan akademik.
-      Kami menyediakan pembelajaran interaktif dan fleksibel untuk jenjang <strong>SD, SMP, dan SMA</strong>, dari kelas 1 hingga 12, dengan pilihan kurikulum nasional dan internasional.
-      <br><br>
-      Kami berkolaborasi dengan guru-guru profesional, mentor berpengalaman, serta mitra pendidikan terpercaya untuk memastikan materi yang kami sajikan selalu berkualitas dan relevan.
-      <br><br>
-      Visi kami adalah menjadi sahabat belajar terpercaya bagi siswa di seluruh Indonesia.
+      <strong>HERO SECTION</strong> adalah platform bimbingan belajar online yang berdiri sejak 2021
+      dengan semangat membimbing generasi muda menuju kesuksesan akademik.
+      Kami percaya bahwa setiap siswa memiliki potensi besar yang dapat dikembangkan dengan dukungan yang tepat.
+      Melalui metode belajar interaktif, materi yang terstruktur, dan guru yang berpengalaman,
+      kami berkomitmen untuk menjadi pendamping terbaik dalam perjalanan belajar mereka.
+      Bersama kami, raih prestasi gemilang dan wujudkan impian akademikmu!
     </p>
   </section>
 
@@ -263,11 +260,35 @@
   <footer>
     <p>&copy; 2025 HERO SECTION. Semua Hak Dilindungi.</p>
     <div class="social-icons">
-      <a href="https://facebook.com/herosection_official" target="_blank"><img src="facebook.png" alt="Facebook"></a>
-      <a href="https://instagram.com/herosection" target="_blank"><img src="instagram.jpg" alt="Instagram"></a>
-      <a href="https://x.com/herosection.official" target="_blank"><img src="x.png" alt="X"></a>
+      <a href="https://www.facebook.com/herosection_official" target="_blank">
+        <img src="facebook.png" alt="Facebook">
+      </a>
+      <a href="https://www.instagram.com/herosection" target="_blank">
+        <img src="instagram.jpg" alt="Instagram">
+      </a>
+      <a href="https://twitter.com/herosection.official" target="_blank">
+        <img src="x.png" alt="X">
+      </a>
     </div>
   </footer>
+
+  <!-- JavaScript Ganti Gambar -->
+  <script>
+    let currentImageIndex = 0;
+    const images = document.querySelectorAll('.hero-image');
+
+    function changeImage() {
+      images[currentImageIndex].classList.remove('active');
+      currentImageIndex = (currentImageIndex + 1) % images.length;
+      images[currentImageIndex].classList.add('active');
+    }
+
+    setInterval(changeImage, 5000);
+
+    window.onload = () => {
+      images[currentImageIndex].classList.add('active');
+    };
+  </script>
 
 </body>
 </html>
