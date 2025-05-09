@@ -1,119 +1,71 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Langganan - HERO SECTION</title>
-  <style>
-    :root {
-      --primary: #fc89ac;
-      --dark: #333;
-      --light: #f8f9fb;
-    }
-
-    body {
-      font-family: 'Poppins', sans-serif;
-      background-color: var(--light);
-      color: var(--dark);
-      padding: 2rem;
-    }
-
-    .container {
-      background-color: #fff;
-      border-radius: 10px;
-      padding: 2rem;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    }
-
-    h1 {
-      color: var(--primary);
-      text-align: center;
-      margin-bottom: 1.5rem;
-    }
-
-    form {
-      display: flex;
-      flex-direction: column;
-      gap: 1.5rem;
-    }
-
-    label {
-      font-weight: bold;
-      color: var(--dark);
-    }
-
-    select {
-      padding: 0.75rem;
-      font-size: 1rem;
-      border: 1px solid #ddd;
-      border-radius: 8px;
-    }
-
-    .cta-button {
-      background-color: var(--primary);
-      color: white;
-      padding: 0.75rem 1.5rem;
-      border-radius: 8px;
-      text-align: center;
-      font-weight: bold;
-      cursor: pointer;
-      border: none;
-    }
-
-    .cta-button:hover {
-      background-color: #e559b3;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulir Pendaftaran | HERO SECTION</title>
+    <link rel="stylesheet" href="langganan.css">
 </head>
 <body>
+    <div class="form-container">
+        <h2>Formulir Pendaftaran</h2>
+        <form action="bukti_pendaftaran.html" method="post">
+            <input type="text" name="nama" placeholder="Nama Lengkap" required>
+            <input type="email" name="email" placeholder="Email" required>
+            <input type="tel" name="no_hp" placeholder="No HP" required>
 
-  <div class="container">
-    <h1>Pilih Paket Langganan</h1>
+            <select name="jenjang" required>
+                <option value="" disabled selected>-- Pilih Jenjang --</option>
+                <option value="SD">SD</option>
+                <option value="SMP">SMP</option>
+                <option value="SMA">SMA</option>
+            </select>
 
-    <form action="harga.html" method="get" id="formLangganan">
-      <!-- Jenjang -->
-      <label for="jenjang">Jenjang:</label>
-      <select id="jenjang" name="jenjang" required>
-        <option value="SD">SD</option>
-        <option value="SMP">SMP</option>
-        <option value="SMA">SMA</option>
-      </select>
+            <select name="kelas" required>
+                <option value="" disabled selected>-- Pilih Kelas --</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+                <option value="11">11</option>
+                <option value="12">12</option>
+            </select>
 
-      <!-- Kelas -->
-      <label for="kelas">Kelas:</label>
-      <select id="kelas" name="kelas" required>
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="4">4</option>
-        <option value="5">5</option>
-        <option value="6">6</option>
-        <option value="7">7</option>
-        <option value="8">8</option>
-        <option value="9">9</option>
-        <option value="10">10</option>
-        <option value="11">11</option>
-        <option value="12">12</option>
-      </select>
+            <select name="semester" required>
+                <option value="" disabled selected>-- Pilih Semester --</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+            </select>
 
-      <!-- Semester -->
-      <label for="semester">Semester:</label>
-      <select id="semester" name="semester" required>
-        <option value="1">1</option>
-        <option value="2">2</option>
-      </select>
+            <select name="kurikulum" required>
+                <option value="" disabled selected>-- Pilih Kurikulum --</option>
+                <option value="KTSP">KTSP</option>
+                <option value="Merdeka">Merdeka</option>
+                <option value="Internasional">Internasional</option>
+            </select>
 
-      <!-- Kurikulum -->
-      <label for="kurikulum">Kurikulum:</label>
-      <select id="kurikulum" name="kurikulum" required>
-        <option value="K13">K13</option>
-        <option value="Merdeka">Merdeka</option>
-      </select>
+            <select name="paket" required>
+                <option value="" disabled selected>-- Pilih Paket --</option>
+                <option value="1 Bulan">1 Bulan: Rp 150.000 (12 sesi)</option>
+                <option value="6 Bulan">6 Bulan: Rp 810.000 (72 sesi)</option>
+                <option value="1 Tahun">1 Tahun: Rp 1.530.000 (144 sesi)</option>
+            </select>
 
-      <!-- Tombol Daftar Sekarang -->
-      <button type="submit" class="cta-button">DAFTAR SEKARANG</button>
-    </form>
-  </div>
+            <select name="metode_pembayaran" required>
+                <option value="" disabled selected>-- Pilih Metode Pembayaran --</option>
+                <option value="Transfer Bank">Transfer Bank</option>
+                <option value="E-Wallet">E-Wallet</option>
+                <option value="Kartu Kredit">Kartu Kredit</option>
+            </select>
 
+            <button type="submit">DAFTAR SEKARANG</button>
+        </form>
+    </div>
 </body>
 </html>

@@ -1,0 +1,109 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #fc89ac;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.form-container, .bukti-container {
+    background-color: #fff;
+    padding: 20px 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px;
+}
+
+h2 {
+    margin-bottom: 20px;
+    color: #333;
+    text-align: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+input, select {
+    margin-bottom: 15px;
+    padding: 10px;
+    font-size: 14px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+button {
+    background-color: #fc89ac;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #e67892;
+}
+
+.info {
+    margin-bottom: 15px;
+}
+
+.info strong {
+    display: inline-block;
+    width: 150px;
+}
+
+/* Pesan Selamat Bergabung */
+.success-message {
+    margin-top: 20px;
+    padding: 25px;
+    background: linear-gradient(135deg, #fc89ac 0%, #ffb6c1 100%);
+    border-radius: 12px;
+    border: 1px solid #fc89ac;
+    text-align: center;
+    color: white;
+    animation: fadeIn 1s ease-in-out;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+.success-message::before {
+    content: "🎉";
+    font-size: 48px;
+    position: absolute;
+    top: -20px;
+    right: -20px;
+    opacity: 0.2;
+}
+
+.success-message h3 {
+    margin-bottom: 10px;
+    font-size: 24px;
+    color: white;
+    font-weight: bold;
+}
+
+.success-message p {
+    margin: 0;
+    font-size: 18px;
+    color: white;
+}
+
+/* Animasi Fade In */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
